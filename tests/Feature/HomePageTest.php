@@ -1,8 +1,20 @@
 <?php
 
-it('can render the homepage', function() {
-   $this
-       ->get('/')
-       ->assertSee('My Blog')
-       ->assertSee('Parallel php');
+use App\Models\BlogPost;
+
+it('can render the homepage', function () {
+    $this
+        ->get('/')
+        ->assertSee('My Blog');
+});
+
+it('will only show published blogposts', function () {
+    $publishedBlogPost = BlogPost::factory()->published()->create();
+
+    $draftBlogPost = BlogPost::factory()->draft()->create();
+
+    $this
+        ->get('/')
+        ->assertSee($publishedBlogPost->title)
+        ->assertDontSee($draftBlogPost->title);
 });
