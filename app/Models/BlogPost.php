@@ -34,6 +34,18 @@ class BlogPost extends Model implements Feedable
         });
     }
 
+    public function isPublished(): bool
+    {
+        return $this->status->equals(BlogPostStatus::PUBLISHED());
+    }
+
+    public function scopeWherePublished(Builder $builder): void
+    {
+        $builder
+            ->where('status', BlogPostStatus::PUBLISHED())
+            ->whereDate('date', '<', now()->addDay());
+    }
+
     public function publish(): self
     {
         $this->update([
@@ -41,11 +53,6 @@ class BlogPost extends Model implements Feedable
         ]);
 
         return $this;
-    }
-
-    public function isPublished(): bool
-    {
-        return $this->status->equals(BlogPostStatus::PUBLISHED());
     }
 
     public function isLikedBy(?string $likerUuid): bool
@@ -88,10 +95,5 @@ class BlogPost extends Model implements Feedable
         return self::all();
     }
 
-    public function scopeWherePublished(Builder $builder): void
-    {
-        $builder
-            ->where('status', BlogPostStatus::PUBLISHED())
-            ->whereDate('date', '<', now()->addDay());
-    }
+
 }
