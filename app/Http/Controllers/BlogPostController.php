@@ -16,7 +16,6 @@ class BlogPostController
             ->paginate(15);
 
         $recents = ExternalPost::mostRecent()->limit(6)->get();
-
         return view('blog.index', [
             'posts' => $posts,
             'recents' => $recents,
