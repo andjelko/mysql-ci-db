@@ -11,7 +11,10 @@
 |
 */
 
-// uses(Tests\TestCase::class)->in('Feature');
+use Illuminate\Foundation\Testing\TestCase;
+use Tests\CreatesApplication;
+
+uses(TestCase::class, CreatesApplication::class)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------
