@@ -67,11 +67,13 @@
 
                             <label for="title" class=" text-sm uppercase tracking-wider font-medium">Title</label>
                             <input type="text" name="title" class="border-0 focus:bg-white focus:ring-ink">
-                            <x-error name="title"/>
+                            
+                            <x-error class="col-start-2" name="title"/>
 
                             <label for="url" class=" text-sm uppercase tracking-wider font-medium">URL</label>
                             <input type="text" name="url" class="border-0 focus:bg-white focus:ring-ink">
-                            <x-error name="url"/>
+                            
+                            <x-error class="col-start-2" name="url"/>
 
                             <div class="col-start-2">
                                 <x-button>Suggest!</x-button>
