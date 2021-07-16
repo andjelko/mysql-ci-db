@@ -5,7 +5,7 @@ use App\Mail\ExternalPostSuggestedMail;
 use App\Models\BlogPost;
 use App\Models\ExternalPost;
 use function Pest\Laravel\assertDatabaseHas;
-use \Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail;
 
 it('can render the homepage', function () {
     $this
