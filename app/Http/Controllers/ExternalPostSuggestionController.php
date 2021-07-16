@@ -27,7 +27,7 @@ class ExternalPostSuggestionController
             'status' => ExternalPostStatus::PENDING(),
         ]);
 
-        Mail::to(User::first())->send(new ExternalPostSuggestedMail($title, $url));
+        Mail::to('admin@yourblog.com')->send(new ExternalPostSuggestedMail($title, $url));
 
         flash('Thanks for your suggestion', 'bg-ink text-white');
 
