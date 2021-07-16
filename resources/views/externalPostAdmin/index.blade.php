@@ -21,7 +21,8 @@
                     <x-row class="grid-cols-6">
                         <x-column class="colspan-2">{{ $post->title }}</x-column>
                         <x-column class="colspan-2">
-                            <a href="{{ $post->url }}" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
+                            <a href="{{ $post->url }}" target="_blank" rel="noopener noreferrer"
+                               class="underline hover:no-underline">
                                 {{ $post->url }}
                             </a>
                         </x-column>
@@ -45,25 +46,29 @@
             </x-table>
         @endif
 
-        <x-table>
-            <x-row class="grid-cols-6" header>
-                <x-column class="colspan-3">Title</x-column>
-                <x-column class="colspan-2">URL</x-column>
-                <x-column right>Date</x-column>
-            </x-row>
+        @if($active->isNotEmpty())
 
-            @foreach($active as $post)
-                <x-row cols="6">
-                    <x-column class="colspan-3">{{ $post->title }}</x-column>
-                    <x-column class="colspan-2">
-                        <a href="{{ $post->url }}" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">
-                            {{ $post->url }}
-                        </a>
-                    </x-column>
-                    <x-column right>{{ $post->date->format('Y-m-d') }}</x-column>
+            <x-table>
+                <x-row class="grid-cols-6" header>
+                    <x-column class="colspan-3">Title</x-column>
+                    <x-column class="colspan-2">URL</x-column>
+                    <x-column right>Date</x-column>
                 </x-row>
-            @endforeach
-        </x-table>
+
+                @foreach($active as $post)
+                    <x-row cols="6">
+                        <x-column class="colspan-3">{{ $post->title }}</x-column>
+                        <x-column class="colspan-2">
+                            <a href="{{ $post->url }}" target="_blank" rel="noopener noreferrer"
+                               class="underline hover:no-underline">
+                                {{ $post->url }}
+                            </a>
+                        </x-column>
+                        <x-column right>{{ $post->date->format('Y-m-d') }}</x-column>
+                    </x-row>
+                @endforeach
+            </x-table>
+        @endif
 
     </div>
 
