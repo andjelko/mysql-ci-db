@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "adb2cded6a88727e2fd4f7fcd8fa2a61",
+    "content-hash": "a87f7dc3ea4b1000385c49dd3fe68785",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -10549,6 +10549,64 @@
             "time": "2021-03-26T22:39:02+00:00"
         },
         {
+            "name": "spatie/pest-plugin-test-time",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/pest-plugin-test-time.git",
+                "reference": "ddbe01e3652987b5faf97baa3926c93f98ffd19e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/pest-plugin-test-time/zipball/ddbe01e3652987b5faf97baa3926c93f98ffd19e",
+                "reference": "ddbe01e3652987b5faf97baa3926c93f98ffd19e",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^2.50",
+                "pestphp/pest": "^1.10",
+                "php": "^8.0",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\PestPluginTestTime\\": "src"
+                },
+                "files": [
+                    "src/Functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Pest plugin to  control the flow of time",
+            "homepage": "https://github.com/spatie/pest-plugin-test-time",
+            "keywords": [
+                "pest-plugin-test-time",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/pest-plugin-test-time/issues",
+                "source": "https://github.com/spatie/pest-plugin-test-time/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-07-25T20:06:08+00:00"
+        },
+        {
             "name": "spatie/ray",
             "version": "1.28.0",
             "source": {
@@ -10622,6 +10680,73 @@
                 }
             ],
             "time": "2021-07-04T13:21:04+00:00"
+        },
+        {
+            "name": "spatie/test-time",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/test-time.git",
+                "reference": "b3e1ccf967e74cf29dcc783d501c174bd5174584"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/test-time/zipball/b3e1ccf967e74cf29dcc783d501c174bd5174584",
+                "reference": "b3e1ccf967e74cf29dcc783d501c174bd5174584",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^2.19",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\TestTime\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A small package to control the flow time",
+            "homepage": "https://github.com/spatie/test-time",
+            "keywords": [
+                "spatie",
+                "test-time"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/test-time/issues",
+                "source": "https://github.com/spatie/test-time/tree/1.2.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/spatie",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-11-03T09:30:20+00:00"
         },
         {
             "name": "symfony/filesystem",

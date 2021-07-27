@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\BlogPost;
+use function Spatie\PestPluginTestTime\testTime;
 
 it('adds a slug when a blog post is created', function() {
     $blogPost = BlogPost::factory()->create([
@@ -19,11 +20,17 @@ it('can determine if a blogpost is published', function() {
 });
 
 it('has a scope to retrieve all published blogposts', function() {
-    $publishedBlogPost = BlogPost::factory()->published()->create();
-    $draftBlogPost = BlogPost::factory()->draft()->create();
+    testTime()->freeze();
 
+    $publishedBlogPost = BlogPost::factory()->published()->create(['date' => now()]);
+    $draftBlogPost = BlogPost::factory()->draft()->create(['date' => now()]);
+
+    testTime()->subSecond();
     $publishedBlogPosts = BlogPost::wherePublished()->get();
+    expect($publishedBlogPosts)->toHaveCount(0);
 
-    expect($publishedBlogPosts)->toHaveCount(1);
-    expect($publishedBlogPosts[0]->id)->toEqual($publishedBlogPost->id);
+    testTime()->addSecond();
+    $publishedBlogPosts = BlogPost::wherePublished()->get();
+    expect($publishedBlogPosts)->toHaveCount(1)
+        ->and($publishedBlogPosts[0]->id)->toEqual($publishedBlogPost->id);
 });
