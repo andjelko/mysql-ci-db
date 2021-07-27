@@ -10,18 +10,18 @@ use Ramsey\Uuid\Uuid;
 
 class RssRepositoryFake extends RssRepository
 {
-    private static array $urls = [];
+    private static array $feedUrls = [];
 
     public static function setUp(): void
     {
-        self::$urls = [];
+        self::$feedUrls = [];
 
         app()->instance(RssRepository::class, new self());
     }
 
     public function fetch(string $url): Collection
     {
-        self::$urls[] = $url;
+        self::$feedUrls[] = $url;
 
         return collect([
             new RssEntry(
@@ -32,8 +32,8 @@ class RssRepositoryFake extends RssRepository
         ]);
     }
 
-    public static function getUrls(): array
+    public static function expectFeedUrlsFetched(array $feedUrls): void
     {
-        return self::$urls;
+        expect(self::$feedUrls)->toBe($feedUrls);
     }
 }

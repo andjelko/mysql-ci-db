@@ -18,7 +18,7 @@ it('can sync external feeds', function() {
 
     artisan(SyncExternalPostsCommand::class)->assertExitCode(0);
 
-    expect(RssRepositoryFake::getUrls())->toEqual($urls);
+    RssRepositoryFake::expectFeedUrlsFetched($urls);
 
     expect(ExternalPost::count())->toBe(3);
 });
