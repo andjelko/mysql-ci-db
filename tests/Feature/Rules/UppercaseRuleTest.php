@@ -15,6 +15,6 @@ it('will pass for upper cased values', function() {
     $result = (new UppercaseRule())->passes('name', 'MY string');
     expect($result)->toBeFalse();
 
-    $result = (new UppercaseRule())->passes('name', 'MY STRINGg');
+    $result = (new UppercaseRule())->passes('name', 'MY STRINg');
     expect($result)->toBeFalse();
 });
