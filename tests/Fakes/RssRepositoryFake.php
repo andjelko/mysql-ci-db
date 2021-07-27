@@ -36,4 +36,9 @@ class RssRepositoryFake extends RssRepository
     {
         expect(self::$feedUrls)->toBe($feedUrls);
     }
+
+    public static function expectFeedUrlsFetchedCount(int $expectedFetchCount): void
+    {
+        expect(count(self::$feedUrls))->toBe($expectedFetchCount);
+    }
 }
