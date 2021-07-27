@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a87f7dc3ea4b1000385c49dd3fe68785",
+    "content-hash": "75d1d07623e6df8b036af062e044ad7c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1258,16 +1258,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.51.0",
+            "version": "v8.52.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "208d9c0043b4c192a9bb9b15782cc4ec37f28bb0"
+                "reference": "8fe9877d52e25f8aed36c51734e5a8510be967e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/208d9c0043b4c192a9bb9b15782cc4ec37f28bb0",
-                "reference": "208d9c0043b4c192a9bb9b15782cc4ec37f28bb0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8fe9877d52e25f8aed36c51734e5a8510be967e6",
+                "reference": "8fe9877d52e25f8aed36c51734e5a8510be967e6",
                 "shasum": ""
             },
             "require": {
@@ -1422,7 +1422,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-07-20T14:38:36+00:00"
+            "time": "2021-07-27T13:03:29+00:00"
         },
         {
             "name": "laravel/jetstream",
@@ -8087,23 +8087,23 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "v1.12.0",
+            "version": "dev-teamcity-styling",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "4ebba1298ae9d4b50f455ed45a6c17706fe76d3d"
+                "reference": "0132756bf052fc331abb980fe14ac64d5e09a09f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/4ebba1298ae9d4b50f455ed45a6c17706fe76d3d",
-                "reference": "4ebba1298ae9d4b50f455ed45a6c17706fe76d3d",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/0132756bf052fc331abb980fe14ac64d5e09a09f",
+                "reference": "0132756bf052fc331abb980fe14ac64d5e09a09f",
                 "shasum": ""
             },
             "require": {
                 "nunomaduro/collision": "^5.4.0",
                 "pestphp/pest-plugin": "^1.0.0",
                 "php": "^7.3 || ^8.0",
-                "phpunit/phpunit": "^9.3.7"
+                "phpunit/phpunit": ">= 9.3.7 <= 9.5.6"
             },
             "require-dev": {
                 "illuminate/console": "^8.47.0",
@@ -8162,7 +8162,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v1.12.0"
+                "source": "https://github.com/pestphp/pest/tree/teamcity-styling"
             },
             "funding": [
                 {
@@ -8190,7 +8190,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-07-26T21:46:22+00:00"
+            "time": "2021-07-22T23:17:15+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -9063,16 +9063,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.7",
+            "version": "9.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d0dc8b6999c937616df4fb046792004b33fd31c5"
+                "reference": "fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d0dc8b6999c937616df4fb046792004b33fd31c5",
-                "reference": "d0dc8b6999c937616df4fb046792004b33fd31c5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb",
+                "reference": "fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb",
                 "shasum": ""
             },
             "require": {
@@ -9150,7 +9150,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.7"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.6"
             },
             "funding": [
                 {
@@ -9162,7 +9162,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-19T06:14:47+00:00"
+            "time": "2021-06-23T05:14:38+00:00"
         },
         {
             "name": "react/promise",
@@ -11124,9 +11124,18 @@
             "time": "2021-07-08T19:01:59+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "pestphp/pest",
+            "version": "dev-teamcity-styling",
+            "alias": "1.12.0",
+            "alias_normalized": "1.12.0.0"
+        }
+    ],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pestphp/pest": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
