@@ -12,6 +12,13 @@ class RssRepositoryFake extends RssRepository
 {
     private static array $urls = [];
 
+    public static function setUp(): void
+    {
+        self::$urls = [];
+
+        app()->instance(RssRepository::class, new self());
+    }
+
     public function fetch(string $url): Collection
     {
         self::$urls[] = $url;
@@ -28,12 +35,5 @@ class RssRepositoryFake extends RssRepository
     public static function getUrls(): array
     {
         return self::$urls;
-    }
-
-    public static function setUp(): void
-    {
-        self::$urls = [];
-
-        app()->instance(RssRepository::class, new self());
     }
 }

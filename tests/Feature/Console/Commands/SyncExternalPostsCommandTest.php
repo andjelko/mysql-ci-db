@@ -3,6 +3,7 @@
 use App\Console\Commands\SyncExternalPostsCommand;
 use App\Models\ExternalPost;
 use Tests\Fakes\RssRepositoryFake;
+use function Pest\Laravel\artisan;
 
 it('can sync external feeds', function() {
     RssRepositoryFake::setUp();
@@ -15,9 +16,9 @@ it('can sync external feeds', function() {
 
     config()->set('services.external_feeds', $urls);
 
-    $this->artisan(SyncExternalPostsCommand::class);
+    artisan(SyncExternalPostsCommand::class)->assertExitCode(0);
 
-    $this->assertEquals($urls, RssRepositoryFake::getUrls());
+    expect(RssRepositoryFake::getUrls())->toEqual($urls);
 
     expect(ExternalPost::count())->toBe(3);
 });
