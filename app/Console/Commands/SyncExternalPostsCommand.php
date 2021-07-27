@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Actions\SyncExternalPost;
+use App\Actions\SyncExternalPostAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Spatie\Fork\Fork;
@@ -13,7 +13,7 @@ class SyncExternalPostsCommand extends Command
 
     protected $description = 'Sync external RSS feeds';
 
-    public function handle(SyncExternalPost $sync)
+    public function handle(SyncExternalPostAction $sync)
     {
         $feeds = config('services.external_feeds');
 

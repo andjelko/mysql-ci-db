@@ -7,7 +7,7 @@ use App\Models\ExternalPost;
 use App\Support\Rss\RssEntry;
 use App\Support\Rss\RssRepository;
 
-class SyncExternalPost
+class SyncExternalPostAction
 {
     public function __construct(private RssRepository $rss)
     {
