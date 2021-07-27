@@ -43,19 +43,15 @@ Route::middleware(['auth:sanctum', 'verified', FormErrorMiddleware::class])
         })->name('dashboard');
 
         Route::prefix('/blog')->group(function () {
-            Route::middleware("can:manage," . BlogPost::class)->group(function () {
-                Route::get('/', [BlogPostAdminController::class, 'index']);
-                Route::get('/new', [BlogPostAdminController::class, 'create']);
-                Route::post('/new', [BlogPostAdminController::class, 'store']);
-            });
+            Route::get('/', [BlogPostAdminController::class, 'index']);
+            Route::get('/new', [BlogPostAdminController::class, 'create']);
+            Route::post('/new', [BlogPostAdminController::class, 'store']);
 
-            Route::middleware("can:manage,post")->group(function () {
-                Route::get('/{post}/edit', [BlogPostAdminController::class, 'edit']);
-                Route::post('/{post}/edit', [BlogPostAdminController::class, 'update']);
-                Route::post('/{post}/publish', [BlogPostAdminController::class, 'publish']);
-                Route::post('/{post}/slug', UpdatePostSlugController::class);
-                Route::post('/{post}/delete', DeletePostController::class);
-            });
+            Route::get('/{post}/edit', [BlogPostAdminController::class, 'edit']);
+            Route::post('/{post}/edit', [BlogPostAdminController::class, 'update']);
+            Route::post('/{post}/publish', [BlogPostAdminController::class, 'publish']);
+            Route::post('/{post}/slug', UpdatePostSlugController::class);
+            Route::post('/{post}/delete', DeletePostController::class);
         });
 
         Route::get('/redirects', [RedirectAdminController::class, 'index']);
