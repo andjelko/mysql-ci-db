@@ -12,7 +12,7 @@ uses(TestCase::class, CreatesApplication::class, RefreshDatabase::class)->in('Un
 
 function login(User $user = null)
 {
-    actingAs($user ?? User::factory()->create());
+    actingAs($user ?? User::factory()->admin()->create());
 }
 
 function createRequest($method, $uri): Request
