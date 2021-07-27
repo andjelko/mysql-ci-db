@@ -33,6 +33,7 @@
         "nunomaduro/collision": "^5.0",
         "pestphp/pest": "^1.10",
         "pestphp/pest-plugin-laravel": "^1.1",
+        "pestphp/pest-plugin-mock": "^1.0",
         "phpunit/phpunit": "^9.3.3",
         "spatie/laravel-ray": "^1.19",
         "spatie/laravel-stubs": "^2.1"
