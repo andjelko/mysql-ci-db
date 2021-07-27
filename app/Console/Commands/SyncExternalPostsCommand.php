@@ -19,16 +19,9 @@ class SyncExternalPostsCommand extends Command
 
         $this->info('Fetching ' . count($feeds) . ' feeds');
 
-        Fork::new()
-            ->before(child: fn () => DB::connection('mysql')->reconnect())
-            ->concurrent(10)
-            ->run(...array_map(function (string $url) use ($sync) {
-                return function () use ($sync, $url) {
-                    $this->comment("\t- $url");
-
-                    $sync($url);
-                };
-            }, $feeds));
+        foreach($feeds as $feed) {
+            $sync($feed);
+        }
 
         $this->info('Done');
     }
