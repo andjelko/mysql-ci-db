@@ -79,6 +79,18 @@ class BlogPost extends Model implements Feedable
         $this->save();
     }
 
+    public function removeLikeBy(string $likerUuid): void
+    {
+        BlogPostLike::where([
+            'blog_post_id' => $this->id,
+            'liker_uuid' => $likerUuid,
+        ])->delete();
+
+        $this->likes -= 1;
+
+        $this->save();
+    }
+
     public function toFeedItem(): FeedItem
     {
         return FeedItem::create()
