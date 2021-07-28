@@ -14,9 +14,13 @@ function error(string $message)
 
 function ship(string $shippingCountry, string $status): bool
 {
-    if (!(($shippingCountry == "GB" || (strcmp($status, "Valid") !== 0)))) {
-        return true;
+    if ($shippingCountry === 'GB') {
+        return false;
     }
 
-    return false;
+    if ($status !== 'Valid') {
+        return false;
+    }
+
+    return true;
 }
