@@ -8,6 +8,7 @@
                 <span>{{ $post->date->format('Y-m-d') }}</span>
                 <span class="-mt-3 mx-2 font-display text-xl">.</span>
                 <span>Written by {{ $post->author }}</span>
+                <x-last-seen :post="$post"/>
             </p>
         </header>
 
