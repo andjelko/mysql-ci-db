@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\SyncExternalPost;
 use App\Actions\SyncExternalPostAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -9,7 +10,7 @@ use Spatie\Fork\Fork;
 
 class SyncExternalPostsCommand extends Command
 {
-    protected $signature = 'sync:externals';
+    protected $signature = 'sync:externals {--async}';
 
     protected $description = 'Sync external RSS feeds';
 
@@ -19,11 +20,33 @@ class SyncExternalPostsCommand extends Command
 
         $this->info('Fetching ' . count($feeds) . ' feeds');
 
-        foreach($feeds as $feed) {
-            $sync($feed);
-        }
+        $this->option('async')
+            ? $this->syncAsync($feeds, $sync)
+            : $this->sync($feeds, $sync);
 
         $this->info('Done');
     }
 
+    private function syncAsync(array $feeds, SyncExternalPostAction $sync): void
+    {
+        Fork::new()
+            ->before(child: fn () => DB::connection('mysql')->reconnect())
+            ->concurrent(10)
+            ->run(...array_map(function (string $url) use ($sync) {
+                return function () use ($sync, $url) {
+                    $this->comment("\t- $url");
+
+                    $sync($url);
+                };
+            }, $feeds));
+    }
+
+    private function sync(array $feeds, SyncExternalPostAction $sync)
+    {
+        foreach ($feeds as $url) {
+            $this->comment("\t- $url");
+
+            $sync($url);
+        }
+    }
 }
