@@ -8,7 +8,6 @@ use Carbon\CarbonImmutable;
 use function Pest\Laravel\assertDatabaseHas;
 
 it('will sync an external feed to the database', function () {
-    // arrange
     $rssRepository = mock(RssRepository::class)
         ->expect(fetch: function() {
             return collect([
@@ -20,11 +19,9 @@ it('will sync an external feed to the database', function () {
             ]);
         });
 
-    // act
     $syncExternalPostsAction = new SyncExternalPostAction($rssRepository);
     $syncExternalPostsAction('https://example.com/feed');
 
-    // assert
     assertDatabaseHas(ExternalPost::class, [
        'url' => 'https://test.com',
        'title' => 'test',
