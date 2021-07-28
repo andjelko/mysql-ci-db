@@ -31,7 +31,7 @@
         "laravel/telescope": "^4.4",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "pestphp/pest": "dev-teamcity-styling as 1.12.0",
+        "pestphp/pest": "^1.13",
         "pestphp/pest-plugin-laravel": "^1.1",
         "pestphp/pest-plugin-mock": "^1.0",
         "phpunit/phpunit": "^9.3.3",

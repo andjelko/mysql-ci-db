@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75d1d07623e6df8b036af062e044ad7c",
+    "content-hash": "37abc12e2f5254778153ea05dacf2f70",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1426,16 +1426,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.3.13",
+            "version": "v2.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "b33a95dabf6ca8dc6b3c6fe3135a9645bf70095b"
+                "reference": "7446fc7c6e62457bf37fef22e0a0e96956dee089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/b33a95dabf6ca8dc6b3c6fe3135a9645bf70095b",
-                "reference": "b33a95dabf6ca8dc6b3c6fe3135a9645bf70095b",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/7446fc7c6e62457bf37fef22e0a0e96956dee089",
+                "reference": "7446fc7c6e62457bf37fef22e0a0e96956dee089",
                 "shasum": ""
             },
             "require": {
@@ -1489,7 +1489,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2021-07-26T08:17:20+00:00"
+            "time": "2021-07-28T10:12:38+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -2178,22 +2178,23 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.50.0",
+            "version": "2.51.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "f47f17d17602b2243414a44ad53d9f8b9ada5fdb"
+                "reference": "8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f47f17d17602b2243414a44ad53d9f8b9ada5fdb",
-                "reference": "f47f17d17602b2243414a44ad53d9f8b9ada5fdb",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922",
+                "reference": "8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^7.1.8 || ^8.0",
                 "symfony/polyfill-mbstring": "^1.0",
+                "symfony/polyfill-php80": "^1.16",
                 "symfony/translation": "^3.4 || ^4.0 || ^5.0"
             },
             "require-dev": {
@@ -2212,8 +2213,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev",
-                    "dev-3.x": "3.x-dev"
+                    "dev-3.x": "3.x-dev",
+                    "dev-master": "2.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -2267,7 +2268,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-28T22:38:45+00:00"
+            "time": "2021-07-28T13:16:28+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -8087,23 +8088,23 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "dev-teamcity-styling",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "0132756bf052fc331abb980fe14ac64d5e09a09f"
+                "reference": "252f9a0e4624600d4403d09807babf4d2c219a85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/0132756bf052fc331abb980fe14ac64d5e09a09f",
-                "reference": "0132756bf052fc331abb980fe14ac64d5e09a09f",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/252f9a0e4624600d4403d09807babf4d2c219a85",
+                "reference": "252f9a0e4624600d4403d09807babf4d2c219a85",
                 "shasum": ""
             },
             "require": {
                 "nunomaduro/collision": "^5.4.0",
                 "pestphp/pest-plugin": "^1.0.0",
                 "php": "^7.3 || ^8.0",
-                "phpunit/phpunit": ">= 9.3.7 <= 9.5.6"
+                "phpunit/phpunit": "^9.3.7"
             },
             "require-dev": {
                 "illuminate/console": "^8.47.0",
@@ -8111,6 +8112,7 @@
                 "laravel/dusk": "^6.15.0",
                 "pestphp/pest-dev-tools": "dev-master"
             },
+            "default-branch": true,
             "bin": [
                 "bin/pest"
             ],
@@ -8162,7 +8164,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/teamcity-styling"
+                "source": "https://github.com/pestphp/pest/tree/master"
             },
             "funding": [
                 {
@@ -8190,7 +8192,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-07-22T23:17:15+00:00"
+            "time": "2021-07-28T08:57:39+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -9063,16 +9065,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.6",
+            "version": "9.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb"
+                "reference": "d0dc8b6999c937616df4fb046792004b33fd31c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb",
-                "reference": "fb9b8333f14e3dce976a60ef6a7e05c7c7ed8bfb",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d0dc8b6999c937616df4fb046792004b33fd31c5",
+                "reference": "d0dc8b6999c937616df4fb046792004b33fd31c5",
                 "shasum": ""
             },
             "require": {
@@ -9150,7 +9152,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.6"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.7"
             },
             "funding": [
                 {
@@ -9162,7 +9164,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-23T05:14:38+00:00"
+            "time": "2021-07-19T06:14:47+00:00"
         },
         {
             "name": "react/promise",
@@ -10875,16 +10877,16 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "75a63c33a8577608444246075ea0af0d052e452a"
+                "reference": "34a41e998c2183e22995f158c581e7b5e755ab9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/75a63c33a8577608444246075ea0af0d052e452a",
-                "reference": "75a63c33a8577608444246075ea0af0d052e452a",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/34a41e998c2183e22995f158c581e7b5e755ab9e",
+                "reference": "34a41e998c2183e22995f158c581e7b5e755ab9e",
                 "shasum": ""
             },
             "require": {
@@ -10913,7 +10915,7 @@
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "support": {
                 "issues": "https://github.com/theseer/tokenizer/issues",
-                "source": "https://github.com/theseer/tokenizer/tree/master"
+                "source": "https://github.com/theseer/tokenizer/tree/1.2.1"
             },
             "funding": [
                 {
@@ -10921,7 +10923,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-07-12T23:59:07+00:00"
+            "time": "2021-07-28T10:34:58+00:00"
         },
         {
             "name": "zbateson/mail-mime-parser",
@@ -11124,18 +11126,9 @@
             "time": "2021-07-08T19:01:59+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "pestphp/pest",
-            "version": "dev-teamcity-styling",
-            "alias": "1.12.0",
-            "alias_normalized": "1.12.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "pestphp/pest": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
