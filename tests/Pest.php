@@ -24,3 +24,17 @@ function createRequest($method, $uri): Request
 
     return Request::createFromBase($symfonyRequest);
 }
+
+expect()->extend('isForbidden', function() {
+    return expect($this->value->isForbidden())->toBeTrue();
+});
+
+expect()->extend('isSuccessfulOrRedirect', function() {
+    return expect($this->value->status())->toBeIn([200, 301, 302]);
+});
+
+expect()->extend('toBeInTheRange', function(int $min, int $max) {
+    return $this
+        ->toBeGreaterThanOrEqual($min)
+        ->toBeLessThanOrEqual($max);
+});

@@ -18,7 +18,7 @@ it('will allow admin users to manage blog posts', function (Closure $request) {
     /** @var \Illuminate\Testing\TestResponse $response */
     $response = $request($post);
 
-    expect($response->status())->toBeIn([200, 301, 302]);
+    expect($response)->isSuccessfulOrRedirect();
 })->with('requests');
 
 it('will not allow guest users to manage blog posts', function (Closure $request) {
@@ -31,7 +31,7 @@ it('will not allow guest users to manage blog posts', function (Closure $request
     /** @var \Illuminate\Testing\TestResponse $response */
     $response = $request($post);
 
-    expect($response->isForbidden())->toBeTrue();
+    expect($response)->isForbidden();
 })->with('requests');
 
 dataset('requests', [
