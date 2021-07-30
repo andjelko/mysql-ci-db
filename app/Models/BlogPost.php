@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Exceptions\BlogPostCouldNotBePublished;
 use App\Http\Controllers\BlogPostController;
 use App\Models\Enums\BlogPostStatus;
 use Illuminate\Database\Eloquent\Builder;
@@ -48,6 +49,10 @@ class BlogPost extends Model implements Feedable
 
     public function publish(): self
     {
+        if($this->status === BlogPostStatus::PUBLISHED()) {
+            throw BlogPostCouldNotBePublished::make();
+        }
+
         $this->update([
             'status' => BlogPostStatus::PUBLISHED(),
         ]);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Exceptions\BlogPostCouldNotBePublished;
 use App\Models\BlogPost;
 use function Spatie\PestPluginTestTime\testTime;
 
@@ -34,3 +35,9 @@ it('has a scope to retrieve all published blogposts', function() {
     expect($publishedBlogPosts)->toHaveCount(1)
         ->and($publishedBlogPosts[0]->id)->toEqual($publishedBlogPost->id);
 });
+
+it('does not allow to publish a post that is already published', function () {
+    $post = BlogPost::factory()->published()->create();
+
+    $post->publish();
+})->throws('The blog post was already published');
