@@ -2,11 +2,9 @@
 
 use App\Models\BlogPost;
 
-it('can render the homepage', function () {
-    $this
-        ->get('/')
-        ->assertSee('My Blog');
-});
+it('can render the homepage')
+    ->get('/')
+    ->assertSee('My Blog');
 
 it('will only show published blogposts', function () {
     $publishedBlogPost = BlogPost::factory()->published()->create();

@@ -4,13 +4,9 @@ use App\Exceptions\BlogPostCouldNotBePublished;
 use App\Models\BlogPost;
 use function Spatie\PestPluginTestTime\testTime;
 
-it('adds a slug when a blog post is created', function() {
-    $blogPost = BlogPost::factory()->create([
-        'title' => 'My blogpost'
-    ]);
-
-    expect($blogPost->slug)->toEqual('my-blogpost');
-});
+it('adds a slug when a blog post is created')
+    ->expect(fn () => BlogPost::factory()->create(['title' => 'My blogpost']))
+    ->slug->toEqual('my-blogpost');
 
 it('can determine if a blogpost is published', function() {
    $publishedBlogPost = BlogPost::factory()->published()->create();
