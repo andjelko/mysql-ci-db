@@ -1,4 +1,4 @@
-<button {{$isLiked ? 'disabled' : ''}} class="flex items-center px-4 py-3 text-sm {{$isLiked ? '' : 'bg-ink text-paper cursor-pointer hover:bg-opacity-80'}}" wire:click="like">
+<button dusk="vote-button" {{$isLiked ? 'disabled' : ''}} class="flex items-center px-4 py-3 text-sm {{$isLiked ? '' : 'bg-ink text-paper cursor-pointer hover:bg-opacity-80'}}" wire:click="like">
     <span class="mr-2">
         <svg class="{{$isLiked ? 'text-ink' : 'text-paper'}} fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
@@ -7,4 +7,4 @@
     </span>
     <span class="font-semibold">{{ $post->likes }}</span>
 </button>
-   
+
