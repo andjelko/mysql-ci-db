@@ -40,4 +40,4 @@ it('does not allow to publish a post that is already published', function () {
     $post = BlogPost::factory()->published()->create();
 
     $post->publish();
-})->throws('The blog post was already published');
+})->throws(BlogPostCouldNotBePublished::class);
