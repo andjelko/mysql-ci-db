@@ -56,6 +56,7 @@ Route::middleware(['auth:sanctum', 'verified', FormErrorMiddleware::class])
                 Route::post('/{post}/edit', [BlogPostAdminController::class, 'update']);
                 Route::post('/{post}/publish', [BlogPostAdminController::class, 'publish']);
                 Route::post('/{post}/delete', DeletePostController::class);
+                Route::post('/{post}/update-slug', UpdatePostSlugController::class);
             });
         });
 
