@@ -78,7 +78,7 @@ class BlogPost extends Model implements Feedable
             ->exists();
     }
 
-    public function addLikeBy(string $likerUuid): void
+    public function addLikeBy(string $likerUuid): self
     {
         BlogPostLike::create([
             'blog_post_id' => $this->id,
@@ -88,6 +88,8 @@ class BlogPost extends Model implements Feedable
         $this->likes += 1;
 
         $this->save();
+
+        return $this;
     }
 
     public function removeLikeBy(string $likerUuid): void
@@ -117,6 +119,4 @@ class BlogPost extends Model implements Feedable
     {
         return self::all();
     }
-
-
 }

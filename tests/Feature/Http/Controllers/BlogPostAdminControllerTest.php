@@ -49,3 +49,21 @@ it('will validate the date format on the post edit form', function () {
         'date' => 'The date does not match the format Y-m-d.'
     ]);
 });
+
+it('will update all the attributes of the post model', function() {
+    login();
+
+    $requestData = $this->requestData->create();
+
+    post(
+        action([BlogPostAdminController::class, 'update'], $this->post->slug),
+        $requestData,
+    )->assertSessionDoesntHaveErrors();
+
+    $updatedPost = $this->post->refresh();
+
+    expect($updatedPost->title)->toBe($requestData['title']);
+    expect($updatedPost->author)->toBe($requestData['author']);
+    expect($updatedPost->body)->toBe($requestData['body']);
+    expect($updatedPost->date->format('Y-m-d'))->toBe($requestData['date']);
+});
