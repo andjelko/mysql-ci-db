@@ -31,17 +31,17 @@ function getFeed(string $title = 'test'): string
 {
     return  <<<XML
        <feed xmlns="http://www.w3.org/2005/Atom">
-           <id>https://test.com/rss</id>
-           <link href="https://test.com/rss"/>
-           <title><![CDATA[ https://test.com ]]></title>
+           <id>https://example.com/rss</id>
+           <link href="https://example.com/rss"/>
+           <title><![CDATA[ https://example.com ]]></title>
            <updated>2021-08-11T11:00:30+00:00</updated>
 
            <entry>
                <title><![CDATA[$title]]></title>
 
-               <link rel="alternate" href="https://test.com/blog/test"/>
+               <link rel="alternate" href="https://example.com/blog/test"/>
 
-               <id>https://test.com/blog/test</id>
+               <id>https://example.com</id>
 
                <author>
                    <name><![CDATA[ Brent Roose ]]></name>
@@ -55,9 +55,9 @@ function getFeed(string $title = 'test'): string
            <entry>
                <title><![CDATA[$title]]></title>
 
-               <link rel="alternate" href="https://test.com/blog/test"/>
+               <link rel="alternate" href="https://example.com"/>
 
-               <id>https://test.com/blog/test</id>
+               <id>https://example.com</id>
 
                <author>
                    <name><![CDATA[ Brent Roose ]]></name>

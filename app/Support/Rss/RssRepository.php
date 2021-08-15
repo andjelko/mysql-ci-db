@@ -17,7 +17,7 @@ class RssRepository
 
         $atomXml = new SimpleXMLElement($rssString);
 
-        return collect(Feed::fromAtom($atomXml)['entry'] ?? [])
+        return collect(Feed::fromAtom($atomXml)->toArray()['entry'] ?? [])
             ->map(fn (array $data) => RssEntry::fromArray($data));
     }
 }
