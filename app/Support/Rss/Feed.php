@@ -2,10 +2,11 @@
 
 namespace App\Support\Rss;
 
+use Feed as BaseFeed;
 use FeedException;
 use SimpleXMLElement;
 
-class Feed extends \Feed
+class Feed extends BaseFeed
 {
     public static function fromAtom(SimpleXMLElement $xml)
     {

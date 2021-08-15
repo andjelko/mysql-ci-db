@@ -2,7 +2,6 @@
 
 namespace App\Support\Rss;
 
-use Feed;
 use Illuminate\Support\Collection;
 
 class RssRepository
