@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\BlogPostResource;
 use App\Models\BlogPost;
 
-class BlogPostApiController
+class BlogPostController
 {
     public function index()
     {
@@ -14,6 +14,6 @@ class BlogPostApiController
 
     public function show(BlogPost $post)
     {
-        return BlogPostResource::make($post)->resolve();
+        return new BlogPostResource($post);
     }
 }

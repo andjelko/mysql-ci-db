@@ -3,7 +3,6 @@
 use App\Http\Controllers\BlogPostAdminController;
 use App\Http\Controllers\ExternalPostAdminController;
 use App\Http\Controllers\ExternalPostSuggestionController;
-use App\Http\Controllers\BlogPostApiController;
 use App\Http\Controllers\RedirectAdminController;
 use App\Http\Controllers\UpdatePostSlugController;
 use App\Http\Controllers\BlogPostController;

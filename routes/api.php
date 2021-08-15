@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BlogPostApiController;
+use App\Http\Controllers\Api\BlogPostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', [BlogPostApiController::class, 'index']);
-Route::get('posts/{postId}', [BlogPostApiController::class, 'show']);
+Route::get('posts', [BlogPostController::class, 'index']);
+Route::get('posts/{postId}', [BlogPostController::class, 'show']);
