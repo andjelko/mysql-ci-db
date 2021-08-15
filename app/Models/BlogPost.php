@@ -8,6 +8,7 @@ use App\Models\Enums\BlogPostStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -33,6 +34,11 @@ class BlogPost extends Model implements Feedable
                 $post->slug = Str::slug($post->title);
             }
         });
+    }
+
+    public function postLikes(): HasMany
+    {
+        return $this->hasMany(BlogPostLike::class);
     }
 
     public function isPublished(): bool
