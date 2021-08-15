@@ -36,7 +36,7 @@ class BlogPost extends Model implements Feedable
         });
     }
 
-    public function postLikes(): HasMany
+    public function blogPostLikes(): HasMany
     {
         return $this->hasMany(BlogPostLike::class);
     }
