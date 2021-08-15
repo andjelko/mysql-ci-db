@@ -46,7 +46,10 @@ it('can be liked', function () {
         ->addLikeBy('a')
         ->addLikeBy('b');
 
-    expect($post->postLikes)->toHaveCount(2);
-    expect($post->postLikes[0]->liker_uuid)->toBe('a');
-    expect($post->postLikes[1]->liker_uuid)->toBe('b');
+    expect($post->postLikes)
+        ->toHaveCount(2)
+        ->sequence(
+            fn($like) => $like->liker_uuid->toBe('a'),
+            fn($like) => $like->liker_uuid->toBe('b')
+        );
 });

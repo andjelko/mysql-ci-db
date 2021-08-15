@@ -62,8 +62,9 @@ it('will update all the attributes of the post model', function() {
 
     $updatedPost = $this->post->refresh();
 
-    expect($updatedPost->title)->toBe($requestData['title']);
-    expect($updatedPost->author)->toBe($requestData['author']);
-    expect($updatedPost->body)->toBe($requestData['body']);
-    expect($updatedPost->date->format('Y-m-d'))->toBe($requestData['date']);
+    expect($updatedPost)
+        ->title->toBe($requestData['title'])
+        ->author->toBe($requestData['author'])
+        ->body->toBe($requestData['body'])
+        ->date->format('Y-m-d')->toBe($requestData['date']);
 });
