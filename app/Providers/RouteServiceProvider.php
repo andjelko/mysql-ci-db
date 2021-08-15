@@ -47,5 +47,9 @@ class RouteServiceProvider extends ServiceProvider
 
             return BlogPost::where('slug', $slug)->first();
         });
+
+        Route::bind('postId', function (int $id) {
+            return BlogPost::findOrFail($id);
+        });
     }
 }

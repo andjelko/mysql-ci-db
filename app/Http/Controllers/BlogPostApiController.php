@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\BlogPostResource;
 use App\Models\BlogPost;
 
-class JsonPostController
+class BlogPostApiController
 {
     public function index()
     {

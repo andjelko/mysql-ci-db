@@ -3,7 +3,7 @@
 use App\Http\Controllers\BlogPostAdminController;
 use App\Http\Controllers\ExternalPostAdminController;
 use App\Http\Controllers\ExternalPostSuggestionController;
-use App\Http\Controllers\JsonPostController;
+use App\Http\Controllers\BlogPostApiController;
 use App\Http\Controllers\RedirectAdminController;
 use App\Http\Controllers\UpdatePostSlugController;
 use App\Http\Controllers\BlogPostController;
@@ -27,8 +27,6 @@ use Illuminate\Support\Facades\Route;
 Route::feeds();
 
 Route::get('/', [BlogPostController::class, 'index']);
-Route::get('/blog/{post}.json', [JsonPostController::class, 'show']);
-Route::get('/blog.json', [JsonPostController::class, 'index']);
 Route::get('/blog/{post}', [BlogPostController::class, 'show']);
 
 Route::post('/suggest', ExternalPostSuggestionController::class);
