@@ -32,7 +32,12 @@ class HighlightCodeBlockRenderer extends FencedCodeRenderer
 
         $lines = explode(PHP_EOL, $content);
 
-        $regex = '/\&lt\;hljs([\w\s]+)&gt;/';
+        $regex = '/
+                \&lt\;         # start tag
+                hljs([\w\s]+)  # everything between the tags
+                &gt;           # end tag
+                /x
+';
 
         foreach ($lines as $index => $line) {
             $line = preg_replace_callback($regex, function ($matches) {
