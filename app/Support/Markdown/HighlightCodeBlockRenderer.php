@@ -12,7 +12,7 @@ class HighlightCodeBlockRenderer extends FencedCodeRenderer
 {
     public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, $inTightList = false)
     {
-        if (! $block instanceof FencedCode) {
+        if (!$block instanceof FencedCode) {
             throw new InvalidArgumentException('Block must be instance of ' . FencedCode::class);
         }
 

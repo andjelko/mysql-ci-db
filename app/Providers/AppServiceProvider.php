@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
             $environment
                 ->addInlineRenderer(Link::class, new LinkRenderer())
                 ->addInlineRenderer(Code::class, new HighlightInlineCodeRenderer())
+                ->addBlockRenderer(FencedCode::class, new HighlightCodeBlockRenderer())
                 ->addBlockRenderer(Heading::class, new HeadingRenderer())
                 ->addBlockRenderer(FencedCode::class, new HighlightCodeBlockRenderer())
                 ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer());
