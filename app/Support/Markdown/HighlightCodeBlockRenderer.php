@@ -37,7 +37,7 @@ class HighlightCodeBlockRenderer extends FencedCodeRenderer
                 hljs([\w\s]+)  # everything between the tags
                 &gt;           # end tag
                 /x
-';
+        ';
 
         foreach ($lines as $index => $line) {
             $line = preg_replace_callback($regex, function ($matches) {
