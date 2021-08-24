@@ -1,6 +1,5 @@
 <?php
 
-
 use League\CommonMark\MarkdownConverter;
 use function Spatie\Snapshots\assertMatchesHtmlSnapshot;
 
