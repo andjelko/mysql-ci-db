@@ -9,7 +9,7 @@ on:
       - 'composer.lock'
 jobs:
   pest:
-    name: Pest
+    name: Run tests
     runs-on: 'ubuntu-18.04'
 
     env:
@@ -53,8 +53,6 @@ jobs:
 
       -   name: Run composer install
           run: composer install -n --prefer-dist
-          env:
-            COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
       -   name: Prepare Laravel Application
           run: |
