@@ -10,7 +10,7 @@ on:
 jobs:
   pest:
     name: Run tests
-    runs-on: 'ubuntu-18.04'
+    runs-on: 'ubuntu-20.04'
 
     env:
       extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
