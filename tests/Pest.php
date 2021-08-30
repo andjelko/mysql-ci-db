@@ -84,3 +84,4 @@ expect()->extend('toBeInTheRange', function(int $min, int $max) {
         ->toBeGreaterThanOrEqual($min)
         ->toBeLessThanOrEqual($max);
 });
+
