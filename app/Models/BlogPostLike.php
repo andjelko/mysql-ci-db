@@ -18,3 +18,4 @@ class BlogPostLike extends Model
         return $this->belongsTo(BlogPost::class);
     }
 }
+
