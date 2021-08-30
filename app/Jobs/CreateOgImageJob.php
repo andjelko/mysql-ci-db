@@ -21,11 +21,13 @@ class CreateOgImageJob implements ShouldQueue
 
     public function handle()
     {
-        $this->post->saveOgImage(
-            Browsershot::html(view('blog.ogImage', ['post' => $this->post])->render())
-                ->devicePixelRatio(2)
-                ->windowSize(1200, 630)
-                ->screenshot()
-        );
+        $html = view('blog.ogImage', ['post' => $this->post])->render();
+
+        $imageData = Browsershot::html($html)
+            ->devicePixelRatio(2)
+            ->windowSize(1200, 630)
+            ->screenshot();
+
+        $this->post->saveOgImage($imageData);
     }
 }
