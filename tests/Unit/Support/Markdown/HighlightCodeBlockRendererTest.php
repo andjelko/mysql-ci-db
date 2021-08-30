@@ -1,7 +1,7 @@
 <?php
 
 use League\CommonMark\MarkdownConverter;
-use function Spatie\Snapshots\assertMatchesHtmlSnapshot;
+use function \Spatie\Snapshots\assertMatchesSnapshot;
 
 it('can parse hljs tags', function () {
     $markdown = <<<MD
@@ -17,5 +17,5 @@ MD;
 
     $html = $convertor->convertToHtml($markdown);
 
-    assertMatchesHtmlSnapshot($html);
+    assertMatchesSnapshot($html);
 });
