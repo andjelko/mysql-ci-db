@@ -107,7 +107,7 @@ class BlogPost extends Model implements Feedable
             'blog_post_id' => $this->id,
         ])->delete();
 
-        $this->likes -= 2;
+        $this->likes -= 1;
 
         $this->save();
     }
