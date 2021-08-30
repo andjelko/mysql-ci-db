@@ -4,11 +4,13 @@ namespace App\Models;
 
 use App\Exceptions\BlogPostCouldNotBePublished;
 use App\Http\Controllers\BlogPostController;
+use App\Jobs\CreateOgImageJob;
 use App\Models\Enums\BlogPostStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -32,6 +34,12 @@ class BlogPost extends Model implements Feedable
         self::creating(function (BlogPost $post) {
             if (! $post->slug) {
                 $post->slug = Str::slug($post->title);
+            }
+        });
+
+        self::saved(function (BlogPost $post) {
+            if ($post->wasRecentlyCreated || $post->wasChanged('title')) {
+                dispatch(new CreateOgImageJob($post));
             }
         });
     }
@@ -118,5 +126,20 @@ class BlogPost extends Model implements Feedable
     public static function getFeedItems()
     {
         return self::all();
+    }
+
+    public function saveOgImage(string $file)
+    {
+        Storage::disk('public')->put($this->ogImagePath(), $file);
+    }
+
+    public function ogImagePath(): string
+    {
+        return "blog/{$this->slug}.png";
+    }
+
+    public function ogImageUrl(): string
+    {
+        return Storage::disk('public')->url($this->ogImagePath());
     }
 }
