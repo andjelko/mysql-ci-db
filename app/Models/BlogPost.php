@@ -103,8 +103,8 @@ class BlogPost extends Model implements Feedable
     public function removeLikeBy(string $likerUuid): void
     {
         BlogPostLike::where([
-            'blog_post_id' => $this->id,
             'liker_uuid' => $likerUuid,
+            'blog_post_id' => $this->id,
         ])->delete();
 
         $this->likes -= 1;
