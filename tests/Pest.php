@@ -8,8 +8,14 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use Tests\CreatesApplication;
 use Tests\DuskTestCase;
 use function Pest\Laravel\actingAs;
+use Illuminate\Support\Facades\Bus;
+use App\Jobs\CreateOgImageJob;
 
-uses(TestCase::class, CreatesApplication::class, RefreshDatabase::class)->in('Unit', 'Feature');
+uses(TestCase::class, CreatesApplication::class, RefreshDatabase::class)
+    ->beforeEach(function() {
+        Bus::fake(CreateOgImageJob::class);
+    })
+    ->in('Unit', 'Feature');
 uses(DuskTestCase::class)->in('Browser');
 
 function login(User $user = null)

@@ -1,6 +1,7 @@
 <?php
 
 use App\Exceptions\BlogPostCouldNotBePublished;
+use App\Jobs\CreateOgImageJob;
 use App\Models\BlogPost;
 use function Spatie\PestPluginTestTime\testTime;
 
@@ -52,4 +53,36 @@ it('can be liked', function () {
             fn($like) => $like->liker_uuid->toBe('a'),
             fn($like) => $like->liker_uuid->toBe('b')
         );
+});
+
+it('will create an og image when a post is created', function () {
+    Bus::fake();
+
+    BlogPost::factory()->create();
+
+    Bus::assertDispatched(CreateOgImageJob::class);
+});
+
+it('will create an new og image when the title is updated', function () {
+    Bus::fake();
+
+    $post = BlogPost::factory()->create();
+
+    Bus::assertDispatched(CreateOgImageJob::class, 1);
+
+    $post->update(['title' => 'new title']);
+
+    Bus::assertDispatched(CreateOgImageJob::class, 2);
+});
+
+it('will not create a new og image when other attributes are updated', function () {
+    Bus::fake();
+
+    $post = BlogPost::factory()->create();
+
+    Bus::assertDispatched(CreateOgImageJob::class, 1);
+
+    $post->fresh()->update(['body' => 'new body']);
+
+    Bus::assertDispatched(CreateOgImageJob::class, 1);
 });
