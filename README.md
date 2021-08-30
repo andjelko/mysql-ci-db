@@ -1,3 +1,5 @@
+[![Tests](https://github.com/spatie/testing-laravel-blog-pest/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/testing-laravel-blog-pest/actions/workflows/run-tests.yml)
+
 ## Blog demo application 
 
 This repo contains the demo application used in the Pest flavour of the [Testing Laravel](https://testing-laravel.com) video course.
