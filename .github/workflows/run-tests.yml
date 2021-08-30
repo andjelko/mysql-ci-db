@@ -60,6 +60,6 @@ jobs:
             php artisan key:generate
 
       -   name: Run Pest
-          run: php artisan test
+          run: vendor/bin/pest
           env:
             DB_PASSWORD: root
