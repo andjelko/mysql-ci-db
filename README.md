@@ -8,6 +8,27 @@ You can clone the repo, remove all the tests, and try adding the tests that we s
 
 In one of the first videos, we'll show you how to add a test to make sure that the homepage works. That would probably be a very good one for your app as well. If you see videos on how to add test for models, add tests for the models in your app, and so on.
 
+## Install
+- Clone the repo
+```bash
+git clone https://github.com/spatie/testing-laravel-blog-pest.git && cd testing-laravel-blog-pest
+```
+- Login to MySQL monitor and create the database
+```mysql
+mysql -u root -p
+create database testing_course_blog;
+exit;
+```
+- Install dependencies, migrate and start the demo
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+npm install
+php artisan migrate --seed 
+php artisan serve 
+```
+
 ## Credits
 
 - [Freek Van der Herten](https://github.com/freekmurze)
