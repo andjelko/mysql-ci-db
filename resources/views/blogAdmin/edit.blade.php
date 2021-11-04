@@ -39,7 +39,7 @@
             @endif
 
             @csrf()
-            
+
             <x-fieldset>
                 <x-label for="title">Title</x-label>
                 <x-input type="text" name="title" id="title" value="{!! $post->title !!}"/>
@@ -50,7 +50,7 @@
                 <x-label for="date">Date</x-label>
                 <x-input type="date" name="date" id="date" value="{!! $post->date->format('Y-m-d') !!}"/>
 
-                
+
                 <x-label class="col-start-1" for="body">Body</x-label>
                 <x-textarea class="col-span-3" name="body" id="body" rows="20">{{ $post->body }}</x-textarea>
 
@@ -67,7 +67,7 @@
                 ">
                     <x-label class="text-2xl text-blue-800">Drop</x-label>
                 </div>
-                  
+
 
                 <div class="col-start-4 justify-self-end space-x-4">
                     @if(!$post->isPublished())
@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="flex items-center justify-end px-4 py-3 bg-ink bg-opacity-5 text-right sm:px-6 sm:rounded-bl-md sm:rounded-br-md">
-                            <x-jet-danger-button>Update Slug</x-button>
+                            <x-jet-danger-button type="submit">Update Slug</x-button>
                         </div>
                     </form>
                 </div>
